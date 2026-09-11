@@ -92,6 +92,12 @@ class Command(BaseCommand):
                 log.exception("Failed to create organization %s", org.get("short_name"))
                 counts["failed"] += 1
 
+    def _ensure_profile(self, user):
+        """Create the UserProfile row a user needs for course enrollment, if it's missing."""
+        from common.djangoapps.student.models import UserProfile
+
+        UserProfile.objects.get_or_create(user=user, defaults={"name": user.username})
+
     def _get_seeder_user(self, user_model):
         """Get or create the technical user that owns any course created by this command."""
         user, was_created = user_model.objects.get_or_create(
@@ -101,6 +107,7 @@ class Command(BaseCommand):
         if was_created:
             user.set_password(DEFAULT_PASSWORD)
             user.save()
+            self._ensure_profile(user)
         return user
 
     def _seed_courses(self, courses, counts):
@@ -174,6 +181,7 @@ class Command(BaseCommand):
                 user.is_staff = user_data.get("is_staff", False)
                 user.is_superuser = user_data.get("is_superuser", False)
                 user.save()
+                self._ensure_profile(user)
                 counts["created"] += 1
             else:
                 counts["skipped"] += 1

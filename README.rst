@@ -1,26 +1,87 @@
 openedx-sandbox-seeder
 ######################
 
-.. note::
-
-  This README was auto-generated. Maintainer: please review its contents and
-  update all relevant sections. Instructions to you are marked with
-  "PLACEHOLDER" or "TODO". Update or remove those sections, and remove this
-  note when you are done.
-
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
 |license-badge| |status-badge|
 
 Purpose
 *******
 
-Django app that seeds an Open edX sandbox with organizations, users, roles, courses, and libraries for quick manual testing.
+A Django app that adds a single management command, ``seed_sandbox_data``, to an
+Open edX install. It creates organizations, courses, content libraries, users, and
+`openedx-authz <https://github.com/openedx/openedx-authz>`_ role assignments from a
+JSON fixture, so a Sandbox is ready to test course-authoring permissions (course
+staff, admin, editor, auditor, library admin, ...) without setting any of that up by
+hand. It's idempotent: running it again only creates what's missing.
 
-TODO: The ``README.rst`` file should start with a brief description of the repository and its purpose.
-It should be described in the context of other repositories under the ``openedx``
-organization. It should make clear where this fits into the overall Open edX
-codebase and should be oriented towards people who are new to the Open edX
-project.
+This started as a management command inside openedx-authz itself
+(`openedx-authz#382 <https://github.com/openedx/openedx-authz/issues/382>`_), and was
+pulled out into its own package per the discussion on
+`openedx-authz#429 <https://github.com/openedx/openedx-authz/pull/429#issuecomment-5605235326>`_:
+a plain Django app (rather than a Tutor-only plugin) works for Tutor and non-Tutor
+deployments alike, and keeps openedx-authz itself free of a command that's specific
+to populating a test environment.
+
+Installation
+************
+
+Install it into your LMS/CMS virtualenv like any other Open edX plugin:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/eduNEXT/openedx-sandbox-seeder.git
+
+For a Tutor devstack, add it to your ``OPENEDX_EXTRA_PIP_REQUIREMENTS`` (or mount it
+under ``env/build/openedx/requirements/private.txt`` / as an editable install under
+``env/apps/openedx``, like any other extra package), then rebuild/restart.
+
+Usage
+*****
+
+Course and library creation only work when run against CMS, that's where those APIs
+live. Organizations, users, and role assignments work from either CMS or LMS.
+
+.. code-block:: bash
+
+    # Seed the bundled default fixture
+    python manage.py cms seed_sandbox_data
+
+    # Seed a fixture of your own
+    python manage.py cms seed_sandbox_data --data-file /path/to/custom.json
+
+    # Delete previously seeded users first, for a clean slate
+    python manage.py cms seed_sandbox_data --reset
+
+The command prints a summary (``N created, N skipped, N failed``) and exits non-zero
+if anything failed, so it's safe to use in a script.
+
+Writing a fixture
+==================
+
+See ``openedx_sandbox_seeder/management/commands/data/sandbox_seed_data.json`` for
+the bundled default. The shape is:
+
+.. code-block:: json
+
+    {
+      "organizations": [{"name": "Sandbox Org", "short_name": "SandboxX"}],
+      "courses": [{"org": "SandboxX", "number": "DemoX", "run": "Demo_Course", "display_name": "Sandbox Demo Course"}],
+      "libraries": [{"org": "SandboxX", "slug": "sandbox-library", "title": "Sandbox Demo Library"}],
+      "users": [
+        {
+          "username": "sandbox_course_editor",
+          "email": "sandbox_course_editor@example.com",
+          "roles": [{"role": "course_editor", "scope": "course-v1:SandboxX+DemoX+Demo_Course"}]
+        }
+      ]
+    }
+
+``roles[].role`` is an openedx-authz role external key (``course_staff``,
+``course_admin``, ``course_editor``, ``course_auditor``, ``library_admin``, ...), and
+``roles[].scope`` is the matching AuthZ scope key: a course (``course-v1:ORG+NUM+RUN``),
+an org-wide glob (``course-v1:ORG+*``), the whole platform (``course-v1:*``), or a
+library (``lib:ORG:SLUG``). Seeded users default to password ``edx`` unless a
+``password`` field is given.
 
 Getting Started with Development
 ********************************
@@ -28,16 +89,6 @@ Getting Started with Development
 Please see the Open edX documentation for `guidance on Python development`_ in this repo.
 
 .. _guidance on Python development: https://docs.openedx.org/en/latest/developers/how-tos/get-ready-for-python-dev.html
-
-Deploying
-*********
-
-TODO: How can a new user go about deploying this component? Is it just a few
-commands? Is there a larger how-to that should be linked here?
-
-PLACEHOLDER: For details on how to deploy this component, see the `deployment how-to`_.
-
-.. _deployment how-to: https://docs.openedx.org/projects/openedx-sandbox-seeder/how-tos/how-to-deploy-this-component.html
 
 Getting Help
 ************

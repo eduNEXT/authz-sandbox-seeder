@@ -1,0 +1,52 @@
+{
+  "organizations": [
+    {"name": "Sandbox Org", "short_name": "SandboxX"}
+  ],
+  "courses": [
+    {
+      "org": "SandboxX",
+      "number": "DemoX",
+      "run": "Demo_Course",
+      "display_name": "Sandbox Demo Course"
+    }
+  ],
+  "libraries": [
+    {
+      "org": "SandboxX",
+      "slug": "sandbox-library",
+      "title": "Sandbox Demo Library"
+    }
+  ],
+  "users": [
+    {
+      "username": "sandbox_platform_admin",
+      "email": "sandbox_platform_admin@example.com",
+      "roles": [{"role": "course_admin", "scope": "course-v1:*"}]
+    },
+    {
+      "username": "sandbox_org_admin",
+      "email": "sandbox_org_admin@example.com",
+      "roles": [{"role": "course_admin", "scope": "course-v1:SandboxX+*"}]
+    },
+    {
+      "username": "sandbox_course_staff",
+      "email": "sandbox_course_staff@example.com",
+      "roles": [{"role": "course_staff", "scope": "course-v1:SandboxX+DemoX+Demo_Course"}]
+    },
+    {
+      "username": "sandbox_course_editor",
+      "email": "sandbox_course_editor@example.com",
+      "roles": [{"role": "course_editor", "scope": "course-v1:SandboxX+DemoX+Demo_Course"}]
+    },
+    {
+      "username": "sandbox_course_auditor",
+      "email": "sandbox_course_auditor@example.com",
+      "roles": [{"role": "course_auditor", "scope": "course-v1:SandboxX+DemoX+Demo_Course"}]
+    },
+    {
+      "username": "sandbox_library_admin",
+      "email": "sandbox_library_admin@example.com",
+      "roles": [{"role": "library_admin", "scope": "lib:SandboxX:sandbox-library"}]
+    }
+  ]
+}

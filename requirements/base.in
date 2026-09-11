@@ -1,0 +1,8 @@
+# Core requirements for using this application
+-c constraints.txt
+
+Django             # Web application framework
+edx-organizations  # Organizations API used to create/lookup orgs
+openedx-authz      # AuthZ role assignment API used to seed role assignments
+
+openedx-atlas

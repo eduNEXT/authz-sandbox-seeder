@@ -2,7 +2,8 @@
 
 Reads a JSON fixture describing organizations, courses, libraries, users, and authz
 role assignments, and creates them idempotently (get_or_create), so the command is
-safe to run repeatedly against a Sandbox.
+safe to run repeatedly against a Sandbox. Pass --reset (or --reset-only) to undo
+everything the same fixture would have created before seeding again.
 
 Course and library creation only work when run against CMS (Studio), since that's
 where those APIs live. Organizations, users, and role assignments work from either
@@ -12,6 +13,7 @@ Example usage:
     python manage.py cms seed_sandbox_data
     python manage.py cms seed_sandbox_data --data-file /path/to/custom.json
     python manage.py cms seed_sandbox_data --reset
+    python manage.py cms seed_sandbox_data --reset-only
 """
 
 import json
@@ -21,7 +23,7 @@ import os
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand, CommandError
 from opaque_keys.edx.locator import LibraryLocatorV2
-from openedx_authz.api.users import assign_role_to_user_in_scope
+from openedx_authz.api.users import assign_role_to_user_in_scope, unassign_all_roles_from_user
 from openedx_authz.engine.enforcer import AuthzEnforcer
 from organizations.api import add_organization, get_organizations
 from organizations.models import Organization
@@ -48,7 +50,15 @@ class Command(BaseCommand):
         parser.add_argument(
             "--reset",
             action="store_true",
-            help="Delete previously seeded users (identified by username) before seeding.",
+            help=(
+                "Delete everything this fixture would have created (organizations, courses, "
+                "libraries, users, and their role assignments) before seeding again."
+            ),
+        )
+        parser.add_argument(
+            "--reset-only",
+            action="store_true",
+            help="Same deletion as --reset, but exit without seeding again afterwards.",
         )
 
     def handle(self, *args, **options):
@@ -57,12 +67,11 @@ class Command(BaseCommand):
             seed_data = json.load(fh)
 
         user_model = get_user_model()
-        usernames = [user["username"] for user in seed_data.get("users", [])]
 
-        if options["reset"]:
-            self._delete_course_creator_rows(usernames)
-            deleted, _ = user_model.objects.filter(username__in=usernames).delete()
-            self.stdout.write(self.style.WARNING(f"Removed {deleted} previously seeded record(s)."))
+        if options["reset"] or options["reset_only"]:
+            self._reset_seed_data(seed_data, user_model)
+            if options["reset_only"]:
+                return
 
         counts = {"created": 0, "skipped": 0, "failed": 0}
         self._seed_organizations(seed_data.get("organizations", []), counts)
@@ -77,6 +86,116 @@ class Command(BaseCommand):
             self.stdout.write(self.style.ERROR(summary))
             raise CommandError(f"{counts['failed']} seed item(s) failed, see logs above for details.")
         self.stdout.write(self.style.SUCCESS(summary))
+
+    def _reset_seed_data(self, seed_data, user_model):
+        """Delete everything the given fixture would have created, undoing the seed.
+
+        Runs in the reverse order of seeding (users/roles, then libraries, then courses,
+        then organizations) so each step only has to undo what the previous seeding step
+        added, without touching unrelated data such as the sandbox_seeder_bot technical user.
+        """
+        removed_users = self._reset_users(seed_data.get("users", []), user_model)
+        removed_libraries = self._reset_libraries(seed_data.get("libraries", []))
+        removed_courses = self._reset_courses(seed_data.get("courses", []), user_model)
+        removed_organizations = self._reset_organizations(seed_data.get("organizations", []))
+        self.stdout.write(
+            self.style.WARNING(
+                "Reset removed {} organization(s), {} course(s), {} librarie(s), {} user(s) "
+                "(role assignments cleared for all fixture users).".format(
+                    removed_organizations, removed_courses, removed_libraries, removed_users
+                )
+            )
+        )
+
+    def _reset_users(self, users, user_model):
+        """Clear role assignments and delete every user from the fixture, tallying users removed."""
+        if not users:
+            return 0
+        usernames = [user["username"] for user in users]
+        for username in usernames:
+            try:
+                unassign_all_roles_from_user(username)
+            # One bad unassignment shouldn't stop the rest of the reset.
+            except Exception:  # pylint: disable=broad-exception-caught
+                log.exception("Failed to unassign roles from %s", username)
+        self._delete_course_creator_rows(usernames)
+        deleted, _ = user_model.objects.filter(username__in=usernames).delete()
+        return deleted
+
+    def _reset_libraries(self, libraries):
+        """Delete every content library from the fixture that still exists, tallying libraries removed."""
+        if not libraries:
+            return 0
+        # edx-platform only, not installed when linting this package on its own.
+        try:
+            from openedx.core.djangoapps.content_libraries import api as lib_api  # pylint: disable=import-error,import-outside-toplevel
+            from openedx.core.djangoapps.content_libraries.models import ContentLibrary  # pylint: disable=import-error,import-outside-toplevel
+        except ImportError:
+            return 0
+
+        removed = 0
+        for library in libraries:
+            if not ContentLibrary.objects.filter(org__short_name=library["org"], slug=library["slug"]).exists():
+                continue
+            library_key = LibraryLocatorV2(org=library["org"], slug=library["slug"])
+            try:
+                lib_api.delete_library(library_key)
+                removed += 1
+            # One bad library shouldn't stop the rest of the reset.
+            except Exception:  # pylint: disable=broad-exception-caught
+                log.exception("Failed to delete library %s", library_key)
+        return removed
+
+    def _reset_courses(self, courses, user_model):
+        """Delete every course from the fixture that still exists, tallying courses removed."""
+        if not courses:
+            return 0
+        # edx-platform (CMS) only, not installed when linting this package on its own.
+        try:
+            from xmodule.modulestore.django import modulestore  # pylint: disable=import-outside-toplevel
+        except ImportError:
+            return 0
+
+        store = modulestore()
+        seeder = None
+        removed = 0
+        for course in courses:
+            course_key = store.make_course_key(course["org"], course["number"], course["run"])
+            if not store.has_course(course_key, ignore_case=True):
+                continue
+            if seeder is None:
+                seeder = self._get_seeder_user(user_model)
+            try:
+                store.delete_course(course_key, seeder.id)
+                removed += 1
+            # One bad course shouldn't stop the rest of the reset.
+            except Exception:  # pylint: disable=broad-exception-caught
+                log.exception("Failed to delete course %s", course_key)
+        return removed
+
+    def _reset_organizations(self, organizations):
+        """Delete every organization from the fixture that still exists, tallying organizations removed.
+
+        Hard-deletes the Organization row instead of going through organizations.api's
+        soft-delete (remove_organization). Soft-deleting also inactivates the org's
+        OrganizationCourse links, and edx-organizations has a reactivation bug: recreating
+        the org tries to reactivate those links before reactivating the org itself, which
+        always raises OrganizationCourse.DoesNotExist. A hard delete cascades to the
+        OrganizationCourse rows (on_delete=CASCADE) instead of leaving them inactive, so the
+        next seed just creates the organization fresh.
+        """
+        if not organizations:
+            return 0
+        removed = 0
+        for org in organizations:
+            short_name = org["short_name"]
+            try:
+                deleted, _ = Organization.objects.filter(short_name=short_name).delete()
+                removed += 1 if deleted else 0
+            # One bad organization shouldn't stop the rest of the reset.
+            except Exception:  # pylint: disable=broad-exception-caught
+                log.exception("Failed to remove organization %s", short_name)
+        return removed
 
     def _delete_course_creator_rows(self, usernames):
         """Delete CourseCreator rows for these users before deleting the users themselves.

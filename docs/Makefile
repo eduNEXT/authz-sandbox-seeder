@@ -96,9 +96,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/openedx-sandbox-seeder.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/authz-sandbox-seeder.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/openedx-sandbox-seeder.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/authz-sandbox-seeder.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -115,8 +115,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/openedx-sandbox-seeder"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/openedx-sandbox-seeder"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/authz-sandbox-seeder"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/authz-sandbox-seeder"
 	@echo "# devhelp"
 
 .PHONY: epub

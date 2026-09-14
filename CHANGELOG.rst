@@ -2,7 +2,7 @@ Change Log
 ##########
 
 ..
-   All enhancements and patches to openedx_sandbox_seeder will be documented
+   All enhancements and patches to authz_sandbox_seeder will be documented
    in this file.  It adheres to the structure of https://keepachangelog.com/ ,
    but in reStructuredText instead of Markdown (for ease of incorporation into
    Sphinx documentation and the PyPI description).

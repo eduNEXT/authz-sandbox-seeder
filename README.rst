@@ -1,4 +1,4 @@
-openedx-sandbox-seeder
+authz-sandbox-seeder
 ######################
 
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
@@ -29,7 +29,7 @@ Install it into your LMS/CMS virtualenv like any other Open edX plugin:
 
 .. code-block:: bash
 
-    pip install git+https://github.com/eduNEXT/openedx-sandbox-seeder.git
+    pip install git+https://github.com/eduNEXT/authz-sandbox-seeder.git
 
 For a Tutor devstack, add it to your ``OPENEDX_EXTRA_PIP_REQUIREMENTS`` (or mount it
 under ``env/build/openedx/requirements/private.txt`` / as an editable install under
@@ -58,7 +58,7 @@ if anything failed, so it's safe to use in a script.
 Writing a fixture
 ==================
 
-See ``openedx_sandbox_seeder/management/commands/data/sandbox_seed_data.json`` for
+See ``authz_sandbox_seeder/management/commands/data/sandbox_seed_data.json`` for
 the bundled default. The shape is:
 
 .. code-block:: json
@@ -98,7 +98,7 @@ Documentation
 
 PLACEHOLDER: Start by going through `the documentation`_.  If you need more help see below.
 
-.. _the documentation: https://docs.openedx.org/projects/openedx-sandbox-seeder
+.. _the documentation: https://docs.openedx.org/projects/authz-sandbox-seeder
 
 (TODO: `Set up documentation <https://openedx.atlassian.net/wiki/spaces/DOC/pages/21627535/Publish+Documentation+on+Read+the+Docs>`_)
 
@@ -116,7 +116,7 @@ For anything non-trivial, the best path is to open an issue in this
 repository with as many details about the issue you are facing as you
 can provide.
 
-https://github.com/eduNEXT/openedx-sandbox-seeder/issues
+https://github.com/eduNEXT/authz-sandbox-seeder/issues
 
 For more information about these options, see the `Getting Help <https://openedx.org/getting-help>`__ page.
 
@@ -158,35 +158,35 @@ The assigned maintainers for this component and other project details may be
 found in `Backstage`_. Backstage pulls this data from the ``catalog-info.yaml``
 file in this repo.
 
-.. _Backstage: https://backstage.openedx.org/catalog/default/component/openedx-sandbox-seeder
+.. _Backstage: https://backstage.openedx.org/catalog/default/component/authz-sandbox-seeder
 
 Reporting Security Issues
 *************************
 
 Please do not report security issues in public. Please email security@openedx.org.
 
-.. |pypi-badge| image:: https://img.shields.io/pypi/v/openedx-sandbox-seeder.svg
-    :target: https://pypi.python.org/pypi/openedx-sandbox-seeder/
+.. |pypi-badge| image:: https://img.shields.io/pypi/v/authz-sandbox-seeder.svg
+    :target: https://pypi.python.org/pypi/authz-sandbox-seeder/
     :alt: PyPI
 
-.. |ci-badge| image:: https://github.com/eduNEXT/openedx-sandbox-seeder/actions/workflows/ci.yml/badge.svg?branch=main
-    :target: https://github.com/eduNEXT/openedx-sandbox-seeder/actions/workflows/ci.yml
+.. |ci-badge| image:: https://github.com/eduNEXT/authz-sandbox-seeder/actions/workflows/ci.yml/badge.svg?branch=main
+    :target: https://github.com/eduNEXT/authz-sandbox-seeder/actions/workflows/ci.yml
     :alt: CI
 
-.. |codecov-badge| image:: https://codecov.io/github/eduNEXT/openedx-sandbox-seeder/coverage.svg?branch=main
-    :target: https://codecov.io/github/eduNEXT/openedx-sandbox-seeder?branch=main
+.. |codecov-badge| image:: https://codecov.io/github/eduNEXT/authz-sandbox-seeder/coverage.svg?branch=main
+    :target: https://codecov.io/github/eduNEXT/authz-sandbox-seeder?branch=main
     :alt: Codecov
 
-.. |doc-badge| image:: https://readthedocs.org/projects/openedx-sandbox-seeder/badge/?version=latest
-    :target: https://docs.openedx.org/projects/openedx-sandbox-seeder
+.. |doc-badge| image:: https://readthedocs.org/projects/authz-sandbox-seeder/badge/?version=latest
+    :target: https://docs.openedx.org/projects/authz-sandbox-seeder
     :alt: Documentation
 
-.. |pyversions-badge| image:: https://img.shields.io/pypi/pyversions/openedx-sandbox-seeder.svg
-    :target: https://pypi.python.org/pypi/openedx-sandbox-seeder/
+.. |pyversions-badge| image:: https://img.shields.io/pypi/pyversions/authz-sandbox-seeder.svg
+    :target: https://pypi.python.org/pypi/authz-sandbox-seeder/
     :alt: Supported Python versions
 
-.. |license-badge| image:: https://img.shields.io/github/license/eduNEXT/openedx-sandbox-seeder.svg
-    :target: https://github.com/eduNEXT/openedx-sandbox-seeder/blob/main/LICENSE.txt
+.. |license-badge| image:: https://img.shields.io/github/license/eduNEXT/authz-sandbox-seeder.svg
+    :target: https://github.com/eduNEXT/authz-sandbox-seeder/blob/main/LICENSE.txt
     :alt: License
 
 .. TODO: Choose one of the statuses below and remove the other status-badge lines.

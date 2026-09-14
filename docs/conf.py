@@ -1,6 +1,6 @@
 # pylint: disable=invalid-name
 """
-openedx-sandbox-seeder documentation build configuration file.
+authz-sandbox-seeder documentation build configuration file.
 
 This file is execfile()d with the current directory set to its
 containing dir.
@@ -39,7 +39,7 @@ def get_version(*file_paths):
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(REPO_ROOT)
 
-VERSION = get_version('../openedx_sandbox_seeder', '__init__.py')
+VERSION = get_version('../authz_sandbox_seeder', '__init__.py')
 # Configure Django for autodoc usage
 os.environ['DJANGO_SETTINGS_MODULE'] = 'test_settings'
 django_setup()
@@ -69,6 +69,15 @@ extensions = [
     'sphinx.ext.napoleon'
 ]
 
+# The management command imports openedx-authz and edx-organizations, both of which
+# define Django models that only resolve correctly inside a real edx-platform install
+# (e.g. they reference CourseOverview/ContentLibrary via Django settings that edx-platform
+# provides). Mock them out so autodoc can still document the command without importing them.
+autodoc_mock_imports = [
+    'openedx_authz',
+    'organizations',
+]
+
 # A list of warning types to suppress arbitrary warning messages.
 suppress_warnings = [
     'image.nonlocal_uri',
@@ -91,17 +100,17 @@ source_suffix = '.rst'
 top_level_doc = 'index'
 
 # General information about the project.
-project = 'openedx-sandbox-seeder'
+project = 'authz-sandbox-seeder'
 copyright = f'{datetime.now().year}, Axim Collaborative, Inc.'  # pylint: disable=redefined-builtin
 author = 'Axim Collaborative, Inc.'
-project_title = 'openedx-sandbox-seeder'
+project_title = 'authz-sandbox-seeder'
 documentation_title = f"{project_title}"
 
 # Set display_github to False if you don't want "edit on Github" button
 html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "edx",  # Username
-    "github_repo": 'openedx-sandbox-seeder',  # Repo name
+    "github_repo": 'authz-sandbox-seeder',  # Repo name
     "github_version": "main",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
 }
@@ -186,7 +195,7 @@ html_theme = 'sphinx_book_theme'
 # documentation.
 #
 html_theme_options = {
-    "repository_url": "https://github.com/eduNEXT/openedx-sandbox-seeder",
+    "repository_url": "https://github.com/eduNEXT/authz-sandbox-seeder",
     "repository_branch": 'main',
     "path_to_docs": "docs/",
     "home_page_in_toc": True,
@@ -223,7 +232,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = 'openedx-sandbox-seeder v0.1.0'
+# html_title = 'authz-sandbox-seeder v0.1.0'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -537,8 +546,8 @@ def on_init(app):  # pylint: disable=unused-argument
         # If we are, assemble the path manually
         bin_path = os.path.abspath(os.path.join(sys.prefix, 'bin'))
         apidoc_path = os.path.join(bin_path, apidoc_path)
-    check_call([apidoc_path, '-o', docs_path, os.path.join(root_path, 'openedx_sandbox_seeder'),
-                os.path.join(root_path, 'openedx_sandbox_seeder/migrations')])
+    check_call([apidoc_path, '-o', docs_path, os.path.join(root_path, 'authz_sandbox_seeder'),
+                os.path.join(root_path, 'authz_sandbox_seeder/migrations')])
 
 
 def setup(app):

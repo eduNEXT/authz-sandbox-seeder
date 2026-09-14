@@ -1,5 +1,5 @@
 """
-openedx_sandbox_seeder Django application initialization.
+authz_sandbox_seeder Django application initialization.
 """
 
 from typing import ClassVar
@@ -7,12 +7,12 @@ from typing import ClassVar
 from django.apps import AppConfig
 
 
-class OpenedxSandboxSeederConfig(AppConfig):
+class AuthzSandboxSeederConfig(AppConfig):
     """
-    Configuration for the openedx_sandbox_seeder Django application.
+    Configuration for the authz_sandbox_seeder Django application.
     """
 
-    name = 'openedx_sandbox_seeder'
+    name = 'authz_sandbox_seeder'
     verbose_name = 'Open edX Sandbox Seeder'
 
     # Required for edx_django_utils.plugins to register this app in INSTALLED_APPS,

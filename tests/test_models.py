@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Tests for the `openedx-sandbox-seeder` models module.
+Tests for the `authz-sandbox-seeder` models module.
 """
 
 import pytest

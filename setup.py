@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Package metadata for openedx_sandbox_seeder.
+Package metadata for authz_sandbox_seeder.
 """
 import os
 import re
@@ -117,7 +117,7 @@ def is_requirement(line):
     return line and line.strip() and not line.startswith(("-r", "#", "-e", "git+", "-c"))
 
 
-VERSION = get_version('openedx_sandbox_seeder', '__init__.py')
+VERSION = get_version('authz_sandbox_seeder', '__init__.py')
 
 if sys.argv[-1] == 'tag':
     print("Tagging the version on github:")
@@ -129,7 +129,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding="u
 CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encoding="utf8").read()
 
 setup(
-    name='openedx-sandbox-seeder',
+    name='authz-sandbox-seeder',
     version=VERSION,
     description=(
         "Django app that seeds an Open edX sandbox with organizations, users, "
@@ -138,9 +138,9 @@ setup(
     long_description=README + '\n\n' + CHANGELOG,
     author='eduNEXT',
     author_email='devs@edunext.co',
-    url='https://github.com/eduNEXT/openedx-sandbox-seeder',
+    url='https://github.com/eduNEXT/authz-sandbox-seeder',
     packages=find_packages(
-        include=['openedx_sandbox_seeder', 'openedx_sandbox_seeder.*'],
+        include=['authz_sandbox_seeder', 'authz_sandbox_seeder.*'],
         exclude=["*tests"],
     ),
 
@@ -163,10 +163,10 @@ setup(
     ],
     entry_points={
         "lms.djangoapp": [
-            "openedx_sandbox_seeder = openedx_sandbox_seeder.apps:OpenedxSandboxSeederConfig",
+            "authz_sandbox_seeder = authz_sandbox_seeder.apps:AuthzSandboxSeederConfig",
         ],
         "cms.djangoapp": [
-            "openedx_sandbox_seeder = openedx_sandbox_seeder.apps:OpenedxSandboxSeederConfig",
+            "authz_sandbox_seeder = authz_sandbox_seeder.apps:AuthzSandboxSeederConfig",
         ],
     },
 )

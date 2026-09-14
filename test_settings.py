@@ -32,14 +32,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.sessions',
-    'openedx_sandbox_seeder',
+    'authz_sandbox_seeder',
 )
 
 LOCALE_PATHS = [
-    root('openedx_sandbox_seeder', 'conf', 'locale'),
+    root('authz_sandbox_seeder', 'conf', 'locale'),
 ]
-
-ROOT_URLCONF = 'openedx_sandbox_seeder.urls'
 
 SECRET_KEY = 'insecure-secret-key'
 

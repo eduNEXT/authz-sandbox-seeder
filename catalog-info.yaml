@@ -4,7 +4,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: ""
 metadata:
-  name: 'openedx-sandbox-seeder'
+  name: 'authz-sandbox-seeder'
   description: "Django app that seeds an Open edX sandbox with organizations, users, roles, courses, and libraries for quick manual testing."
   annotations:
     # The openedx.org/release key is described in OEP-10:

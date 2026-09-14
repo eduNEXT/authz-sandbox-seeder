@@ -55,6 +55,46 @@ live. Organizations, users, and role assignments work from either CMS or LMS.
 The command prints a summary (``N created, N skipped, N failed``) and exits non-zero
 if anything failed, so it's safe to use in a script.
 
+Default seeded credentials
+===========================
+
+The bundled fixture creates the org ``SandboxX``, the course
+``course-v1:SandboxX+DemoX+Demo_Course``, and the library ``lib:SandboxX:sandbox-library``,
+plus these users. All of them log in with their **email** (not username) and the
+password ``edx``, unless the fixture you used overrides it.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Email
+     - Role
+     - Scope
+     - Grants
+   * - sandbox_platform_admin@example.com
+     - ``course_admin``
+     - whole platform
+     - Full course-authoring access to every org and course.
+   * - sandbox_org_admin@example.com
+     - ``course_admin``
+     - org ``SandboxX``
+     - Full course-authoring access to every course in ``SandboxX``.
+   * - sandbox_course_staff@example.com
+     - ``course_staff``
+     - the sandbox course
+     - Edit course content, no course team/settings management.
+   * - sandbox_course_editor@example.com
+     - ``course_editor``
+     - the sandbox course
+     - Edit course content, same as staff without the broader admin actions.
+   * - sandbox_course_auditor@example.com
+     - ``course_auditor``
+     - the sandbox course
+     - Read-only: can view the course, can't edit or paste content into it.
+   * - sandbox_library_admin@example.com
+     - ``library_admin``
+     - the sandbox library
+     - Full management of ``sandbox-library`` (content, team, settings).
+
 Writing a fixture
 ==================
 

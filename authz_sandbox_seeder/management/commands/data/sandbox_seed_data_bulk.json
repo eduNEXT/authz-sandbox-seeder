@@ -1,0 +1,1230 @@
+{
+  "organizations": [
+    {
+      "name": "Sandbox Org 01",
+      "short_name": "SandboxOrg01"
+    },
+    {
+      "name": "Sandbox Org 02",
+      "short_name": "SandboxOrg02"
+    },
+    {
+      "name": "Sandbox Org 03",
+      "short_name": "SandboxOrg03"
+    },
+    {
+      "name": "Sandbox Org 04",
+      "short_name": "SandboxOrg04"
+    },
+    {
+      "name": "Sandbox Org 05",
+      "short_name": "SandboxOrg05"
+    },
+    {
+      "name": "Sandbox Org 06",
+      "short_name": "SandboxOrg06"
+    },
+    {
+      "name": "Sandbox Org 07",
+      "short_name": "SandboxOrg07"
+    },
+    {
+      "name": "Sandbox Org 08",
+      "short_name": "SandboxOrg08"
+    },
+    {
+      "name": "Sandbox Org 09",
+      "short_name": "SandboxOrg09"
+    },
+    {
+      "name": "Sandbox Org 10",
+      "short_name": "SandboxOrg10"
+    }
+  ],
+  "courses": [
+    {
+      "org": "SandboxOrg01",
+      "number": "DemoX01A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 01A"
+    },
+    {
+      "org": "SandboxOrg01",
+      "number": "DemoX01B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 01B"
+    },
+    {
+      "org": "SandboxOrg02",
+      "number": "DemoX02A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 02A"
+    },
+    {
+      "org": "SandboxOrg02",
+      "number": "DemoX02B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 02B"
+    },
+    {
+      "org": "SandboxOrg03",
+      "number": "DemoX03A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 03A"
+    },
+    {
+      "org": "SandboxOrg03",
+      "number": "DemoX03B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 03B"
+    },
+    {
+      "org": "SandboxOrg04",
+      "number": "DemoX04A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 04A"
+    },
+    {
+      "org": "SandboxOrg04",
+      "number": "DemoX04B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 04B"
+    },
+    {
+      "org": "SandboxOrg05",
+      "number": "DemoX05A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 05A"
+    },
+    {
+      "org": "SandboxOrg05",
+      "number": "DemoX05B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 05B"
+    },
+    {
+      "org": "SandboxOrg06",
+      "number": "DemoX06A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 06A"
+    },
+    {
+      "org": "SandboxOrg06",
+      "number": "DemoX06B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 06B"
+    },
+    {
+      "org": "SandboxOrg07",
+      "number": "DemoX07A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 07A"
+    },
+    {
+      "org": "SandboxOrg07",
+      "number": "DemoX07B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 07B"
+    },
+    {
+      "org": "SandboxOrg08",
+      "number": "DemoX08A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 08A"
+    },
+    {
+      "org": "SandboxOrg08",
+      "number": "DemoX08B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 08B"
+    },
+    {
+      "org": "SandboxOrg09",
+      "number": "DemoX09A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 09A"
+    },
+    {
+      "org": "SandboxOrg09",
+      "number": "DemoX09B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 09B"
+    },
+    {
+      "org": "SandboxOrg10",
+      "number": "DemoX10A",
+      "run": "2026_T1",
+      "display_name": "Sandbox Course 10A"
+    },
+    {
+      "org": "SandboxOrg10",
+      "number": "DemoX10B",
+      "run": "2026_T2",
+      "display_name": "Sandbox Course 10B"
+    }
+  ],
+  "libraries": [
+    {
+      "org": "SandboxOrg01",
+      "slug": "library-01-a",
+      "title": "Sandbox Library 01A"
+    },
+    {
+      "org": "SandboxOrg01",
+      "slug": "library-01-b",
+      "title": "Sandbox Library 01B"
+    },
+    {
+      "org": "SandboxOrg02",
+      "slug": "library-02-a",
+      "title": "Sandbox Library 02A"
+    },
+    {
+      "org": "SandboxOrg02",
+      "slug": "library-02-b",
+      "title": "Sandbox Library 02B"
+    },
+    {
+      "org": "SandboxOrg03",
+      "slug": "library-03-a",
+      "title": "Sandbox Library 03A"
+    },
+    {
+      "org": "SandboxOrg03",
+      "slug": "library-03-b",
+      "title": "Sandbox Library 03B"
+    },
+    {
+      "org": "SandboxOrg04",
+      "slug": "library-04-a",
+      "title": "Sandbox Library 04A"
+    },
+    {
+      "org": "SandboxOrg04",
+      "slug": "library-04-b",
+      "title": "Sandbox Library 04B"
+    },
+    {
+      "org": "SandboxOrg05",
+      "slug": "library-05-a",
+      "title": "Sandbox Library 05A"
+    },
+    {
+      "org": "SandboxOrg05",
+      "slug": "library-05-b",
+      "title": "Sandbox Library 05B"
+    },
+    {
+      "org": "SandboxOrg06",
+      "slug": "library-06-a",
+      "title": "Sandbox Library 06A"
+    },
+    {
+      "org": "SandboxOrg06",
+      "slug": "library-06-b",
+      "title": "Sandbox Library 06B"
+    },
+    {
+      "org": "SandboxOrg07",
+      "slug": "library-07-a",
+      "title": "Sandbox Library 07A"
+    },
+    {
+      "org": "SandboxOrg07",
+      "slug": "library-07-b",
+      "title": "Sandbox Library 07B"
+    },
+    {
+      "org": "SandboxOrg08",
+      "slug": "library-08-a",
+      "title": "Sandbox Library 08A"
+    },
+    {
+      "org": "SandboxOrg08",
+      "slug": "library-08-b",
+      "title": "Sandbox Library 08B"
+    },
+    {
+      "org": "SandboxOrg09",
+      "slug": "library-09-a",
+      "title": "Sandbox Library 09A"
+    },
+    {
+      "org": "SandboxOrg09",
+      "slug": "library-09-b",
+      "title": "Sandbox Library 09B"
+    },
+    {
+      "org": "SandboxOrg10",
+      "slug": "library-10-a",
+      "title": "Sandbox Library 10A"
+    },
+    {
+      "org": "SandboxOrg10",
+      "slug": "library-10-b",
+      "title": "Sandbox Library 10B"
+    }
+  ],
+  "users": [
+    {
+      "username": "sandbox_user_001",
+      "email": "sandbox_user_001@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg01+DemoX01A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_002",
+      "email": "sandbox_user_002@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg01:library-01-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_003",
+      "email": "sandbox_user_003@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg01+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_004",
+      "email": "sandbox_user_004@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg01:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_005",
+      "email": "sandbox_user_005@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_006",
+      "email": "sandbox_user_006@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_007",
+      "email": "sandbox_user_007@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg01+DemoX01B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_008",
+      "email": "sandbox_user_008@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg01:library-01-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_009",
+      "email": "sandbox_user_009@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg02+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_010",
+      "email": "sandbox_user_010@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg02:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_011",
+      "email": "sandbox_user_011@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_012",
+      "email": "sandbox_user_012@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_013",
+      "email": "sandbox_user_013@example.com",
+      "roles": [
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg02+DemoX02A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_014",
+      "email": "sandbox_user_014@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg02:library-02-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_015",
+      "email": "sandbox_user_015@example.com",
+      "roles": [
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg03+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_016",
+      "email": "sandbox_user_016@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg03:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_017",
+      "email": "sandbox_user_017@example.com",
+      "roles": [
+        {
+          "role": "course_editor",
+          "scope": "course-v1:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_018",
+      "email": "sandbox_user_018@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_019",
+      "email": "sandbox_user_019@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg02+DemoX02B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_020",
+      "email": "sandbox_user_020@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg02:library-02-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_021",
+      "email": "sandbox_user_021@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg04+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_022",
+      "email": "sandbox_user_022@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg04:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_023",
+      "email": "sandbox_user_023@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_024",
+      "email": "sandbox_user_024@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_025",
+      "email": "sandbox_user_025@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg03+DemoX03A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_026",
+      "email": "sandbox_user_026@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg03:library-03-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_027",
+      "email": "sandbox_user_027@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg05+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_028",
+      "email": "sandbox_user_028@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg05:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_029",
+      "email": "sandbox_user_029@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_030",
+      "email": "sandbox_user_030@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_031",
+      "email": "sandbox_user_031@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg03+DemoX03B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_032",
+      "email": "sandbox_user_032@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg03:library-03-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_033",
+      "email": "sandbox_user_033@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg06+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_034",
+      "email": "sandbox_user_034@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg06:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_035",
+      "email": "sandbox_user_035@example.com",
+      "roles": [
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg04+DemoX04A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_036",
+      "email": "sandbox_user_036@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg04:library-04-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_037",
+      "email": "sandbox_user_037@example.com",
+      "roles": [
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg07+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_038",
+      "email": "sandbox_user_038@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg07:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_039",
+      "email": "sandbox_user_039@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg04+DemoX04B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_040",
+      "email": "sandbox_user_040@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg04:library-04-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_041",
+      "email": "sandbox_user_041@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg08+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_042",
+      "email": "sandbox_user_042@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg08:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_043",
+      "email": "sandbox_user_043@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg05+DemoX05A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_044",
+      "email": "sandbox_user_044@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg05:library-05-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_045",
+      "email": "sandbox_user_045@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg09+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_046",
+      "email": "sandbox_user_046@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg09:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_047",
+      "email": "sandbox_user_047@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg05+DemoX05B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_048",
+      "email": "sandbox_user_048@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg05:library-05-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_049",
+      "email": "sandbox_user_049@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg10+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_050",
+      "email": "sandbox_user_050@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg10:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_051",
+      "email": "sandbox_user_051@example.com",
+      "roles": [
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg06+DemoX06A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_052",
+      "email": "sandbox_user_052@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg06:library-06-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_053",
+      "email": "sandbox_user_053@example.com",
+      "roles": [
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg01+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_054",
+      "email": "sandbox_user_054@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg01:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_055",
+      "email": "sandbox_user_055@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg06+DemoX06B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_056",
+      "email": "sandbox_user_056@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg06:library-06-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_057",
+      "email": "sandbox_user_057@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg02+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_058",
+      "email": "sandbox_user_058@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg02:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_059",
+      "email": "sandbox_user_059@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg07+DemoX07A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_060",
+      "email": "sandbox_user_060@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg07:library-07-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_061",
+      "email": "sandbox_user_061@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg03+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_062",
+      "email": "sandbox_user_062@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg03:*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_063",
+      "email": "sandbox_user_063@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg07+DemoX07B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_064",
+      "email": "sandbox_user_064@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg07:library-07-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_065",
+      "email": "sandbox_user_065@example.com",
+      "roles": [
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg04+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_066",
+      "email": "sandbox_user_066@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg04:*"
+        },
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg08+DemoX08A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_067",
+      "email": "sandbox_user_067@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg08:library-08-a"
+        },
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg05+*"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_068",
+      "email": "sandbox_user_068@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg05:*"
+        },
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg08+DemoX08B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_069",
+      "email": "sandbox_user_069@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg08:library-08-b"
+        },
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg09+DemoX09A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_070",
+      "email": "sandbox_user_070@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg09:library-09-a"
+        },
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg09+DemoX09B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_071",
+      "email": "sandbox_user_071@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg09:library-09-b"
+        },
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg10+DemoX10A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_072",
+      "email": "sandbox_user_072@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg10:library-10-a"
+        },
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg10+DemoX10B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_073",
+      "email": "sandbox_user_073@example.com",
+      "roles": [
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg10:library-10-b"
+        },
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg01+DemoX01A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_074",
+      "email": "sandbox_user_074@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg01:library-01-a"
+        },
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg01+DemoX01B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_075",
+      "email": "sandbox_user_075@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg01:library-01-b"
+        },
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg02+DemoX02A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_076",
+      "email": "sandbox_user_076@example.com",
+      "roles": [
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg02:library-02-a"
+        },
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg02+DemoX02B+2026_T2"
+        },
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg02:library-02-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_077",
+      "email": "sandbox_user_077@example.com",
+      "roles": [
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg03+DemoX03A+2026_T1"
+        },
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg03:library-03-a"
+        },
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg03+DemoX03B+2026_T2"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_078",
+      "email": "sandbox_user_078@example.com",
+      "roles": [
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg03:library-03-b"
+        },
+        {
+          "role": "course_editor",
+          "scope": "course-v1:SandboxOrg04+DemoX04A+2026_T1"
+        },
+        {
+          "role": "library_contributor",
+          "scope": "lib:SandboxOrg04:library-04-a"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_079",
+      "email": "sandbox_user_079@example.com",
+      "roles": [
+        {
+          "role": "course_auditor",
+          "scope": "course-v1:SandboxOrg04+DemoX04B+2026_T2"
+        },
+        {
+          "role": "library_user",
+          "scope": "lib:SandboxOrg04:library-04-b"
+        },
+        {
+          "role": "course_admin",
+          "scope": "course-v1:SandboxOrg05+DemoX05A+2026_T1"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_080",
+      "email": "sandbox_user_080@example.com",
+      "roles": [
+        {
+          "role": "library_admin",
+          "scope": "lib:SandboxOrg05:library-05-a"
+        },
+        {
+          "role": "course_staff",
+          "scope": "course-v1:SandboxOrg05+DemoX05B+2026_T2"
+        },
+        {
+          "role": "library_author",
+          "scope": "lib:SandboxOrg05:library-05-b"
+        }
+      ]
+    },
+    {
+      "username": "sandbox_user_081",
+      "email": "sandbox_user_081@example.com"
+    },
+    {
+      "username": "sandbox_user_082",
+      "email": "sandbox_user_082@example.com"
+    },
+    {
+      "username": "sandbox_user_083",
+      "email": "sandbox_user_083@example.com"
+    },
+    {
+      "username": "sandbox_user_084",
+      "email": "sandbox_user_084@example.com"
+    },
+    {
+      "username": "sandbox_user_085",
+      "email": "sandbox_user_085@example.com"
+    },
+    {
+      "username": "sandbox_user_086",
+      "email": "sandbox_user_086@example.com"
+    },
+    {
+      "username": "sandbox_user_087",
+      "email": "sandbox_user_087@example.com"
+    },
+    {
+      "username": "sandbox_user_088",
+      "email": "sandbox_user_088@example.com"
+    },
+    {
+      "username": "sandbox_user_089",
+      "email": "sandbox_user_089@example.com"
+    },
+    {
+      "username": "sandbox_user_090",
+      "email": "sandbox_user_090@example.com"
+    },
+    {
+      "username": "sandbox_user_091",
+      "email": "sandbox_user_091@example.com"
+    },
+    {
+      "username": "sandbox_user_092",
+      "email": "sandbox_user_092@example.com"
+    },
+    {
+      "username": "sandbox_user_093",
+      "email": "sandbox_user_093@example.com"
+    },
+    {
+      "username": "sandbox_user_094",
+      "email": "sandbox_user_094@example.com"
+    },
+    {
+      "username": "sandbox_user_095",
+      "email": "sandbox_user_095@example.com"
+    },
+    {
+      "username": "sandbox_user_096",
+      "email": "sandbox_user_096@example.com"
+    },
+    {
+      "username": "sandbox_user_097",
+      "email": "sandbox_user_097@example.com"
+    },
+    {
+      "username": "sandbox_user_098",
+      "email": "sandbox_user_098@example.com"
+    },
+    {
+      "username": "sandbox_user_099",
+      "email": "sandbox_user_099@example.com"
+    },
+    {
+      "username": "sandbox_user_100",
+      "email": "sandbox_user_100@example.com"
+    }
+  ]
+}

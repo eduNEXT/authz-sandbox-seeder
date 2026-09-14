@@ -94,7 +94,8 @@ class Command(BaseCommand):
 
     def _ensure_profile(self, user):
         """Create the UserProfile row a user needs for course enrollment, if it's missing."""
-        from common.djangoapps.student.models import UserProfile
+        # edx-platform only, not installed when linting this package on its own.
+        from common.djangoapps.student.models import UserProfile  # pylint: disable=import-error,import-outside-toplevel
 
         UserProfile.objects.get_or_create(user=user, defaults={"name": user.username})
 
@@ -114,6 +115,8 @@ class Command(BaseCommand):
         """Create any course from the fixture that doesn't already exist, tallying counts."""
         if not courses:
             return
+        # edx-platform (CMS) only, not installed when linting this package on its own.
+        # pylint: disable=import-outside-toplevel
         try:
             from cms.djangoapps.contentstore.views.course import create_new_course
             from xmodule.modulestore.django import modulestore
@@ -122,6 +125,7 @@ class Command(BaseCommand):
             log.exception("Course creation is only available when running under CMS.")
             counts["failed"] += len(courses)
             return
+        # pylint: enable=import-outside-toplevel
 
         user_model = get_user_model()
         seeder = self._get_seeder_user(user_model)
@@ -151,8 +155,12 @@ class Command(BaseCommand):
         """Create any content library from the fixture that doesn't already exist, tallying counts."""
         if not libraries:
             return
+        # edx-platform only, not installed when linting this package on its own.
+        # pylint: disable=import-error,import-outside-toplevel
         from openedx.core.djangoapps.content_libraries import api as lib_api
         from openedx.core.djangoapps.content_libraries.models import ContentLibrary
+
+        # pylint: enable=import-error,import-outside-toplevel
 
         for library in libraries:
             library_key = LibraryLocatorV2(org=library["org"], slug=library["slug"])

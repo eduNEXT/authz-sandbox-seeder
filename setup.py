@@ -131,7 +131,10 @@ CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encod
 setup(
     name='openedx-sandbox-seeder',
     version=VERSION,
-    description="""Django app that seeds an Open edX sandbox with organizations, users, roles, courses, and libraries for quick manual testing.""",
+    description=(
+        "Django app that seeds an Open edX sandbox with organizations, users, "
+        "roles, courses, and libraries for quick manual testing."
+    ),
     long_description=README + '\n\n' + CHANGELOG,
     author='eduNEXT',
     author_email='devs@edunext.co',

@@ -128,8 +128,9 @@ class Command(BaseCommand):
             return 0
         # edx-platform only, not installed when linting this package on its own.
         try:
-            from openedx.core.djangoapps.content_libraries import api as lib_api  # pylint: disable=import-error,import-outside-toplevel
-            from openedx.core.djangoapps.content_libraries.models import ContentLibrary  # pylint: disable=import-error,import-outside-toplevel
+            # pylint: disable=import-error,import-outside-toplevel
+            from openedx.core.djangoapps.content_libraries import api as lib_api
+            from openedx.core.djangoapps.content_libraries.models import ContentLibrary
         except ImportError:
             return 0
 

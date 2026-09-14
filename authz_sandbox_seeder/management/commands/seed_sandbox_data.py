@@ -60,6 +60,7 @@ class Command(BaseCommand):
         usernames = [user["username"] for user in seed_data.get("users", [])]
 
         if options["reset"]:
+            self._delete_course_creator_rows(usernames)
             deleted, _ = user_model.objects.filter(username__in=usernames).delete()
             self.stdout.write(self.style.WARNING(f"Removed {deleted} previously seeded record(s)."))
 
@@ -76,6 +77,23 @@ class Command(BaseCommand):
             self.stdout.write(self.style.ERROR(summary))
             raise CommandError(f"{counts['failed']} seed item(s) failed, see logs above for details.")
         self.stdout.write(self.style.SUCCESS(summary))
+
+    def _delete_course_creator_rows(self, usernames):
+        """Delete CourseCreator rows for these users before deleting the users themselves.
+
+        Works around a recursion bug in edx-platform: CourseCreator has a post_init signal
+        that computes all_organizations, and when Django's delete collector cascades from
+        User into CourseCreator to delete it, that signal ends up in infinite recursion
+        (RecursionError) while building the cascade's subquery. Deleting CourseCreator rows
+        directly first, with a plain filter (not part of a cascade), avoids the collector
+        ever needing to touch this table.
+        """
+        # edx-platform (CMS) only, not installed when linting this package on its own.
+        try:
+            from cms.djangoapps.course_creators.models import CourseCreator  # pylint: disable=import-outside-toplevel
+        except ImportError:
+            return
+        CourseCreator.objects.filter(user__username__in=usernames).delete()
 
     def _seed_organizations(self, organizations, counts):
         """Create any organization from the fixture that doesn't already exist, tallying counts."""

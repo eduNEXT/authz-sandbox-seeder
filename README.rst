@@ -49,8 +49,12 @@ live. Organizations, users, and role assignments work from either CMS or LMS.
     # Seed a fixture of your own
     python manage.py cms seed_sandbox_data --data-file /path/to/custom.json
 
-    # Delete previously seeded users first, for a clean slate
+    # Delete everything the fixture would have created (organizations, courses,
+    # libraries, users, and their role assignments), then seed again
     python manage.py cms seed_sandbox_data --reset
+
+    # Same deletion as --reset, but exit without seeding again afterwards
+    python manage.py cms seed_sandbox_data --reset-only
 
 The command prints a summary (``N created, N skipped, N failed``) and exits non-zero
 if anything failed, so it's safe to use in a script.
@@ -122,6 +126,15 @@ the bundled default. The shape is:
 an org-wide glob (``course-v1:ORG+*``), the whole platform (``course-v1:*``), or a
 library (``lib:ORG:SLUG``). Seeded users default to password ``edx`` unless a
 ``password`` field is given.
+
+A larger fixture, ``authz_sandbox_seeder/management/commands/data/sandbox_seed_data_bulk.json``,
+is also bundled for load-testing scenarios: 10 organizations, 20 courses, 20 libraries,
+and 100 users with a mix of single-role, multi-role, and role-less accounts. Point
+``--data-file`` at it to use it instead of the default fixture:
+
+.. code-block:: bash
+
+    python manage.py cms seed_sandbox_data --data-file authz_sandbox_seeder/management/commands/data/sandbox_seed_data_bulk.json
 
 Getting Started with Development
 ********************************

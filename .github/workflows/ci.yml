@@ -12,6 +12,7 @@ jobs:
     name: tests
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest]
         python-version: ["3.12"]
@@ -40,4 +41,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
-          fail_ci_if_error: true
+          # No CODECOV_TOKEN secret is set up for this repo yet; don't let that block CI.
+          fail_ci_if_error: false

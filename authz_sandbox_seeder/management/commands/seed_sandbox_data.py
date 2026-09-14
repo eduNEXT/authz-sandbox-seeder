@@ -246,7 +246,10 @@ class Command(BaseCommand):
         if was_created:
             user.set_password(DEFAULT_PASSWORD)
             user.save()
-            self._ensure_profile(user)
+        # Ensure the profile even for a pre-existing seeder user: one created by an older
+        # version of this command (before this method started creating a profile) would
+        # otherwise be missing it forever, breaking course creation on every run.
+        self._ensure_profile(user)
         return user
 
     def _seed_courses(self, courses, counts):

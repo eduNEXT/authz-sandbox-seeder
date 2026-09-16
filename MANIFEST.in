@@ -3,4 +3,4 @@ include LICENSE.txt
 include README.rst
 include requirements/base.in
 include requirements/constraints.txt
-recursive-include authz_sandbox_seeder *.html *.png *.gif *.js *.css *.jpg *.jpeg *.svg
+recursive-include authz_sandbox_seeder *.html *.png *.gif *.js *.css *.jpg *.jpeg *.svg *.json

@@ -30,7 +30,7 @@ from organizations.models import Organization
 
 log = logging.getLogger(__name__)
 
-DEFAULT_DATA_FILE = os.path.join(os.path.dirname(__file__), "data", "sandbox_seed_data.json")
+DEFAULT_DATA_FILE = os.path.join(os.path.dirname(__file__), "data", "sandbox_seed_data_bulk.json")
 DEFAULT_PASSWORD = "edx"
 SEEDER_USERNAME = "sandbox_seeder_bot"
 
